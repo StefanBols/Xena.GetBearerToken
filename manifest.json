@@ -1,0 +1,39 @@
+{
+  "manifest_version": 1,
+
+  "name": "Xena - Get Bearer Token",
+  "description": "Xena - Get Bearer Token is an extension allowing developers and QA's at Xena.biz to retrieve the Bearer Token used for the API",
+  "homepage_url": "https://github.com/StefanBols/Xena.GetBearerToken",
+  "version": "1",
+  "browser_action": {
+    "default_title": "Get Bearer Token"
+  },
+
+  "background": {
+    "scripts": [
+      "scripts/load.js"
+    ],
+    "persistent": true
+  },
+
+  "permissions": [
+    "https://*.xena.biz/*",
+    "https://localhost/*",
+    "http://localhost/*",
+    "activeTab"
+  ],
+
+  "content_scripts": [
+    {
+        "matches": [
+            "https://*.xena.biz/*",
+            "https://localhost/*",
+            "http://localhost/*"
+        ]
+    }
+  ],
+
+  "icons": {
+    "100": "graphics/icons/icon.png"
+  }
+}
